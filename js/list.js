@@ -130,16 +130,5 @@ function generateList() {
         s.deleteRow(1);
     }
 
-    for (var t = 0; c; t++) {
-        c = s.rows[t];
-        filetype = e(c.cells[0].children[0].innerHTML);
-        c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";
-        c.cells[0].classList.add("col-auto");
-        c.cells[1].classList.add("col", "filename");
-        c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell");
-        c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell");
-        if (filetype == "image") {
-            c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //cloudflare js css
-        }
-    }
+    for (var c, t = 0; c = s.rows[t]; t++) filetype = e(c.cells[0].children[0].innerHTML), c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "", c.cells[0].classList.add("col-auto"), c.cells[1].classList.add("col", "filename"), c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell"), c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell"), "image" == filetype && c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip");
 }

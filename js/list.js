@@ -94,8 +94,6 @@ function generateList() {
             case "swift":
             case "vb":
                 return "code";
-            default:
-                return "file";
         }
     }
 
@@ -118,17 +116,10 @@ function generateList() {
                 default:
                     return "fa-file-o";
             }
-        }(e) + '" aria-hidden="true"></i>';
+        }(e) + '" aria-hidden="true"></i>'
     }
 
     var s = document.getElementById("list");
-    s.removeAttribute("cellpadding");
-    s.removeAttribute("cellspacing");
-    s.classList.add("table", "table-sm", "table-hover", "text-nowrap");
-    s.tHead.children[0].classList.add("d-none", "d-md-table-row");
-    if (window.location.pathname != '/') {
-        s.deleteRow(1);
-    }
-
+    s.removeAttribute("cellpadding"), s.removeAttribute("cellspacing"), s.classList.add("table", "table-sm", "table-hover", "text-nowrap"), s.tHead.children[0].classList.add("d-none", "d-md-table-row"), "/" != window.location.pathname && s.deleteRow(1);
     for (var c, t = 0; c = s.rows[t]; t++) filetype = e(c.cells[0].children[0].innerHTML), c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "", c.cells[0].classList.add("col-auto"), c.cells[1].classList.add("col", "filename"), c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell"), c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell"), "image" == filetype && c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip");
 }

@@ -100,7 +100,7 @@ function generateList() {
     }
 
     function a(e) {
-        return '<i class="fa fa-fw ' + function (e) {
+        return '<i class="fa fa-fw ' + function(e) {
             switch (e) {
                 case "folder":
                     return "fa-folder";
@@ -120,6 +120,7 @@ function generateList() {
             }
         }(e) + '" aria-hidden="true"></i>';
     }
+
     var s = document.getElementById("list");
     s.removeAttribute("cellpadding");
     s.removeAttribute("cellspacing");
@@ -129,7 +130,8 @@ function generateList() {
         s.deleteRow(1);
     }
 
-    for (var t = 0, c = s.rows[t]; t < s.length; t++) {
+    for (var t = 0; t < s.length; t++) {
+        var c = s.rows[t];
         filetype = e(c.cells[0].children[0].innerHTML);
         c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";
         c.cells[0].classList.add("col-auto");
@@ -137,7 +139,7 @@ function generateList() {
         c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell");
         c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell");
         if (filetype == "image") {
-            c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip");//cloudflare js css
+            c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //cloudflare js css
         }
     }
 }

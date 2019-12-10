@@ -130,7 +130,7 @@ function generateList() {
         s.deleteRow(1);
     }
 
-    for (var t = 0, c; t < s.length; t++) {
+    for (var t = 0; c; t++) {
         c = s.rows[t];
         filetype = e(c.cells[0].children[0].innerHTML);
         c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";

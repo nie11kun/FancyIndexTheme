@@ -130,8 +130,8 @@ function generateList() {
         s.deleteRow(1);
     }
 
-    for (var t = 0; t < s.length; t++) {
-        var c = s.rows[t];
+    for (var t = 0, c = s.rows[t]; t < s.length; t++) {
+        c = s.rows[t];
         filetype = e(c.cells[0].children[0].innerHTML);
         c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";
         c.cells[0].classList.add("col-auto");

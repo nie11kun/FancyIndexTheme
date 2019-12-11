@@ -114,7 +114,7 @@ function generateList() {
                 case "text":
                 case "video":
                 case "word":
-                    return "fa-file-video";
+                    return "fa-file-" + x;
                 default:
                     return "fa-file";
             }
@@ -141,7 +141,7 @@ function generateList() {
         c.cells[1].classList.add("col", "filename");
         c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell");
         c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell");
-
+        
         if (filetype == "image") {
             c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //cloudflare js css
         }

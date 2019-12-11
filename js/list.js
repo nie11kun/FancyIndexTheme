@@ -3,7 +3,7 @@
  * This file is part of the nginx-fancyindex-flat-theme, licensed under the GNU
  */
 function generateList() {
-    function e(e) {
+    function whatFormat(e) {
         if (e.endsWith("/")) return "folder";
         switch (e.split(".").pop().toLowerCase()) {
             case "txt":
@@ -99,9 +99,9 @@ function generateList() {
         }
     }
 
-    function a(e) {
-        return '<i class="fa fa-fw ' + function (e) {
-            switch (e) {
+    function addIcon(e) {
+        return '<i class="fa fa-fw ' + function (x) {
+            switch (x) {
                 case "folder":
                     return "fa-folder";
                 case "archive":
@@ -114,7 +114,7 @@ function generateList() {
                 case "text":
                 case "video":
                 case "word":
-                    return "fa-file-" + e + "";
+                    return "fa-file-" + x + "";
                 default:
                     return "fa-file";
             }
@@ -132,12 +132,16 @@ function generateList() {
 
     for (var c, t = 0; t < s.rows.length; t++) {
         c = s.rows[t];
-        filetype = e(c.cells[0].children[0].innerHTML);
-        c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";
+
+        filetype = whatFormat(c.cells[0].children[0].innerHTML);
+
+        c.insertCell(0).innerHTML = t > 0 ? addIcon(filetype) : "";
+
         c.cells[0].classList.add("col-auto");
         c.cells[1].classList.add("col", "filename");
         c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell");
         c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell");
+        
         if (filetype == "image") {
             c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //cloudflare js css
         }

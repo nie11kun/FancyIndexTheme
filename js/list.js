@@ -116,7 +116,7 @@ function generateList() {
                 case "word":
                     return "fa-file-" + e + "-o";
                 default:
-                    return "fa-file-o";
+                    return "fa-files-o";
             }
         }(e) + '" aria-hidden="true"></i>';
     }

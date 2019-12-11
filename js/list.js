@@ -114,7 +114,7 @@ function generateList() {
                 case "text":
                 case "video":
                 case "word":
-                    return "fa-file-" + toString(e);
+                    return "fa-file-" + e + "";
                 default:
                     return "fa-file";
             }

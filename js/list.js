@@ -114,9 +114,9 @@ function generateList() {
                 case "text":
                 case "video":
                 case "word":
-                    return "fa-file-" + e + "-o";
+                    return "fa-file-" + e;
                 default:
-                    return "fa-files-o";
+                    return "fa-file";
             }
         }(e) + '" aria-hidden="true"></i>';
     }

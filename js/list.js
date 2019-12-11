@@ -100,7 +100,7 @@ function generateList() {
     }
 
     function addIcon(e) {
-        return '<i class="fa fa-fw ' + function (x) {
+        return '<i class="fa fa-fw ' + function(x) {
             switch (x) {
                 case "folder":
                     return "fa-folder";
@@ -127,7 +127,7 @@ function generateList() {
     s.classList.add("table", "table-sm", "table-hover", "text-nowrap");
     s.tHead.children[0].classList.add("d-none", "d-md-table-row");
     if (window.location.pathname != '/') {
-        s.deleteRow(1);//hidden "Parent directory/"
+        s.deleteRow(1); //hidden "Parent directory/"
     }
 
     for (var c, t = 0; t < s.rows.length; t++) {
@@ -141,9 +141,9 @@ function generateList() {
         c.cells[1].classList.add("col", "filename");
         c.cells[2].classList.add("col-auto", "d-none", "d-md-table-cell");
         c.cells[3].classList.add("col-auto", "d-none", "d-md-table-cell");
-        
+
         if (filetype == "image") {
-            c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //cloudflare js css
+            c.cells[1].children[0].setAttribute("data-lightbox", "roadtrip"); //lightbox sytle
         }
     }
 }

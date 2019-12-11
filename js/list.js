@@ -114,12 +114,13 @@ function generateList() {
                 case "text":
                 case "video":
                 case "word":
-                    return "fa-file-" + e;
+                    return "fa-file-" + toString(e);
                 default:
                     return "fa-file";
             }
         }(e) + '" aria-hidden="true"></i>';
     }
+
     var s = document.getElementById("list");
     s.removeAttribute("cellpadding");
     s.removeAttribute("cellspacing");

@@ -126,10 +126,10 @@ function generateList() {
     s.classList.add("table", "table-sm", "table-hover", "text-nowrap");
     s.tHead.children[0].classList.add("d-none", "d-md-table-row");
     if (window.location.pathname != '/') {
-        s.deleteRow(1);
+        s.deleteRow(1);//hidden "Parent directory/"
     }
 
-    for (var c, t = 0; t < s.length; t++) {
+    for (var c, t = 0; t < s.rows.length; t++) {
         c = s.rows[t];
         filetype = e(c.cells[0].children[0].innerHTML);
         c.insertCell(0).innerHTML = t > 0 ? a(filetype) : "";

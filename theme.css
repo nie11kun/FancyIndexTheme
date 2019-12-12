@@ -17,6 +17,10 @@ body {
     color: #4caf50
 }
 
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
 html {
     position: relative;
     min-height: 100%

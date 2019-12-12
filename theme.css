@@ -9,7 +9,8 @@ body {
 
 .breadcrumb {
     background-color: transparent;
-    padding-left: 50px
+    padding-left: 50px;
+    padding-left: 0px;
 }
 
 .breadcrumb .breadcrumb-item a {

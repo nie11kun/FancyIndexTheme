@@ -7,8 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://niekun.net/webcdn/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
     <script type="text/javascript" src="https://niekun.net/webcdn/fontawesome-free-5.12.0-web/js/all.min.js"></script>
 
+    <style>
+        .breadcrumb {
+            background-color: transparent;
+            /*padding-left: 0px*/
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+        }
+    </style>
     <!--
         <link rel="stylesheet" href="https://niekun.net/webcdn/fontawesome-free-5.12.0-web/css/all.min.css">
         <script src="https://cdn.bootcss.com/font-awesome/5.11.2/js/all.js"></script>
@@ -25,9 +37,18 @@
     <i class="fa fa-fw fa-folder" aria-hidden="true"></i>
     <i class="fa fa-fw fa-cloud" aria-hidden="true"></i>
 
-    <ol>
-        <li>test1<li>test1<li>test1
-    </ol>
+    <nav class="navbar navbar-expand-md navbar-dark indigo mb-5">
+        <nav class="mr-auto" aria-label="breadcrumb">
+            <div class="float-left">
+                <a class="white-text button-collapse" href="#!" data-activates="slide-out"><i class="fas fa-bars"></i></a>
+            </div>
+            <ol class="breadcrumb pt-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </nav>
 </body>
 
 </html>

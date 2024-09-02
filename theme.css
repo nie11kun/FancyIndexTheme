@@ -38,11 +38,11 @@ html {
 .footer a,
 .footer a:focus,
 .footer a:hover {
-    color: #4caf50
+    color: #2867b9
 }
 
 .header {
-    background-color: #4caf50;
+    background-color: #3587d9;
     color: #fff;
     min-height: 24px
 }
